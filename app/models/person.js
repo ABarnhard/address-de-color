@@ -11,3 +11,5 @@ Person.all = function(cb){
   Person.collection.find().toArray(cb);
 };
 
+module.exports = Person;
+

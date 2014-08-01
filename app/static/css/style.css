@@ -1,0 +1,32 @@
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin: 0 5px;
+}
+.person {
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+  position: relative;
+  border: 2px solid black;
+  width: 200px;
+  height: 150px;
+}
+
+.person > h1 {
+  margin: 5px;
+}
+
+.person > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.person li a {
+  text-decoration: none;
+  color: black;
+}
