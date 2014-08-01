@@ -10,6 +10,9 @@ module.exports = function(app, express){
   app.use(bodyParser.urlencoded({extended:true}));
 
   app.get('/', home.index);
+  app.get('/about', home.about);
+  app.get('/faq', home.faq);
+  app.get('/contact', home.contact);
 
   console.log('Express Pipeline Established');
 };
