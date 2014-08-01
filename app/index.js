@@ -1,24 +1,15 @@
 'use strict';
 
-var express = require('express');
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
+var port = process.env.PORT;
+var db = process.env.DB;
 
+var express = require('express');
 var app = express();
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
-
-app.use(morgan('dev'));
-app.use(express.static(__dirname + '/static'));
-app.use(bodyParser.urlencoded({extended:true}));
-
-app.get('/', function(req, res){
-  res.render('index');
-});
-
-var port = process.env.PORT;
+require('./lib/config')(app);
+require('./lib/pipeline')(app, express);
+require('./lib/mongodb')(db);
 
 app.listen(port, function(){
-  console.log('Express is now listening on PORT:',port);
+  console.log('Express Ready on PORT:', port);
 });
